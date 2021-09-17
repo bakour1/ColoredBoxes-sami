@@ -1,0 +1,159 @@
+* {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+.one {
+  grid-area: one;
+  background-color: #1ABC9C;
+  width: 30%;
+}
+
+.two {
+  grid-area: two;
+  background-color: #E67E22;
+  width: 50%;
+}
+
+.three {
+  grid-area: three;
+  background-color: #27AE60;
+  width: 50%;
+}
+
+.four {
+  grid-area: four;
+  background-color: #F39C12;
+  width: 20%;
+}
+
+.five {
+  grid-area: five;
+  background-color: #3498DB;
+  width: 40%;
+}
+
+.six {
+  grid-area: six;
+  background-color: #8E44AD;
+  width: 20%;
+}
+
+.seven {
+  grid-area: seven;
+  background-color: #2C3E50;
+  width: 60%;
+}
+
+.eight {
+  grid-area: eight;
+  background-color: #C0392B;
+  width: 40%;
+}
+
+section.float .clear {
+  clear: both;
+  overflow: auto;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section div {
+  text-align: center;
+  height: 75px;
+  line-height: 75px;
+}
+
+section .one,
+section .four,
+section .eight {
+  height: 150px;
+  line-height: 150px;
+}
+
+/* ---- float ---- */
+section.float {
+  width: 50%;
+}
+
+section.float>div {
+  float: left;
+}
+
+section.float>div.four,
+section.float>div.eight {
+  margin-top: -75px;
+  float: right;
+}
+
+/* ---  flex --- */
+section.flex {
+  display: flex;
+  width: 50%;
+  flex-flow: row wrap;
+}
+
+section.flex .column-1 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 150px;
+}
+
+section.flex .column-1>div {
+  width: 100%;
+}
+
+section.flex .column-2 {
+  width: 60%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section.flex .column-2 .five {
+  width: 70%;
+}
+
+section.flex .column-2 .six {
+  width: 30%;
+}
+
+section.flex .column-2 .seven {
+  width: 100%;
+}
+
+section.flex .eight {}
+
+/* --- grid --- */
+section.grid>div {
+  width: unset;
+  height: unset;
+}
+
+section.grid {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 30% 10% 15% 25% 20%;
+  grid-template-rows: repeat(4, 75px);
+  grid-template-areas:
+    "one two two two four"
+    "one three three three four"
+    "five five six eight eight"
+    "seven seven seven eight eight"
+  ;
+}
